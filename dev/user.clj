@@ -4,7 +4,10 @@
             [clojure.test :as test]
             [schema.core :as s]
             [midje.repl :as midje]
-            [criterium.core :as crit]))
+            [criterium.core :as crit]
+            [loom.graph :as g]
+            [loom.alg :as ga]
+            [loom.alg-generic :as gag]))
 
 (defmacro spy [x]
   `(let [x# ~x]
@@ -13,4 +16,4 @@
 
 (defn tests []
   (s/with-fn-validation
-    (midje/load-facts 'docker-maker.*)))
+    (midje/load-facts '*)))

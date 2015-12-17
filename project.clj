@@ -4,7 +4,9 @@
   :license {:name "Apache License, Version 2.0"
             :url  "http://www.apache.org/licenses/LICENSE-2.0"}
   :dependencies [[org.clojure/clojure "1.7.0"]
-                 [prismatic/schema "1.0.3"]]
+                 [prismatic/schema "1.0.3"]
+                 [prismatic/plumbing "0.5.2"]
+                 [aysylu/loom "0.5.4"]]
   :main ^:skip-aot docker-maker.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}

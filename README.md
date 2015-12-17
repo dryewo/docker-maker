@@ -4,6 +4,14 @@ A tool to facilitate building of docker images.
 
 A Work In Progress.
 
+## Usage
+
+Run the tests:
+
+```
+$ lein midje
+```
+
 ## License
 
 Copyright © 2015 Zalando SE
