@@ -6,7 +6,10 @@
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [prismatic/schema "1.0.3"]
                  [prismatic/plumbing "0.5.2"]
-                 [aysylu/loom "0.5.4"]]
+                 [aysylu/loom "0.5.4"]
+                 [com.github.docker-java/docker-java "2.1.2"]
+                 [org.apache.commons/commons-compress "1.8"]
+                 [org.slf4j/slf4j-simple "1.7.13"]]
   :main ^:skip-aot docker-maker.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}

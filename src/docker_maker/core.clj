@@ -4,12 +4,14 @@
             [plumbing.core :as p]
             [loom.graph :as g]
             [loom.alg :as ga]
-            [clojure.string :as str]))
+            [clojure.string :as str]
+            [clojure.java.io :as io]
+            [docker-maker.docker]))
 
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (println "Hello, World!"))
+  (docker-maker.docker/docker-info))
 
 
 (defn dependency-graph
@@ -49,6 +51,3 @@
         full-scenario-list    (sorted-dependencies full-dependency-graph required-scenarios)
         concatenated-snippets (concat-snippets (:scenarios db) full-scenario-list)]
     (str/join "\n" [HEADER concatenated-snippets FOOTER])))
-
-;(defn build-image [spec]
-;  )

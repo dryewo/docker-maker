@@ -7,7 +7,9 @@
             [criterium.core :as crit]
             [loom.graph :as g]
             [loom.alg :as ga]
-            [loom.alg-generic :as gag]))
+            [loom.alg-generic :as gag]
+            [docker-maker.docker :as d]
+            [clojure.pprint :refer [pprint]]))
 
 (defmacro spy [x]
   `(let [x# ~x]

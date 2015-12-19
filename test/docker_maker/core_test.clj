@@ -19,15 +19,6 @@
     "stups"   {:dependencies ["python"]
                :snippet      "RUN echo 'Stups' >> /log.log"}}})
 
-(facts "about generate-dockerfile"
-  (generate-dockerfile TEST_DB {:scenarios ["scala"]}) =>
-  "FROM ubuntu
-MAINTAINER docker-maker
-RUN echo 'Java' >> /log.log
-RUN echo 'Scala' >> /log.log
-CMD [\"/bin/bash\"]"
-  )
-
 (facts "about dependency-graph"
   (dependency-graph (:scenarios TEST_DB))
   => (g/digraph ["clojure" "java"] ["scala" "java"] ["stups" "python"] ["python" "magic"]))
@@ -39,3 +30,12 @@ CMD [\"/bin/bash\"]"
 (facts "about concat-snippets"
   (concat-snippets (:scenarios TEST_DB) ["java" "scala"])
   => "RUN echo 'Java' >> /log.log\nRUN echo 'Scala' >> /log.log")
+
+(facts "about generate-dockerfile"
+  (generate-dockerfile TEST_DB {:scenarios ["scala"]}) =>
+  "FROM ubuntu
+MAINTAINER docker-maker
+RUN echo 'Java' >> /log.log
+RUN echo 'Scala' >> /log.log
+CMD [\"/bin/bash\"]"
+  )
